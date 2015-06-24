@@ -14,9 +14,13 @@ Format conversion
 
 `[...]` means that the parameter is optional.
 
-`csv2libsvm.py <input file> <output file> [<label index = 0>] [<skip headers = 0>] [<pivot index = -1>]`
+`csv2libsvm.py <input file> <output file> [<label index = 0>] [<skip headers = 0>]`
 
-Convert CSV to LIBSVM format. If there are no labels in the input file, specify _label index_ = -1. If there are headers in the input file, specify _skip headers_ = 1. It can also input typical pivoted SQL like CSV in the form of `sampleID, colIndex [, label]` if _pivot index_ is defined pointing to _colIndex_.
+Convert CSV to the LIBSVM format. If there are no labels in the input file, specify _label index_ = -1. If there are headers in the input file, specify _skip headers_ = 1.
+
+`pivotedcsv2libsvm.py <input file> <output file> [<skip headers = 0>]`
+
+Convert pivoted CSV (each line contains sample id, feature index and feature value) to the LIBSVM format. If there are headers in the input file, specify _skip headers_ = 1.
 
 
 `csv2vw.py <input file> <output file> [<label index = 0>] [<skip headers = 0>]`
