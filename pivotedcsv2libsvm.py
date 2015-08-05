@@ -72,7 +72,9 @@ for line in reader:
 	feature_value = line[2].strip() if len( line ) > 2 else '1'
 	
 	if row_id != current_row:
+		current_line.sort()
 		new_line = construct_line( '1', current_line )
+		#print new_line
 		o.write( new_line )	
 		
 		current_row = row_id
@@ -81,5 +83,6 @@ for line in reader:
 		current_line.append(( feature_index, feature_value ))
 
 # the last row
+current_line.sort()
 new_line = construct_line( '1', current_line )
 o.write( new_line )	
